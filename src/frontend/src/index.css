@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Seeds Lifestyle palette — OKLCH L C H */
+    /* Forest green: #2F4A2E */
+    --primary: 0.32 0.07 140;
+    --primary-foreground: 0.96 0.012 85;
+
+    /* Olive green: #4E6B3A */
+    --secondary: 0.43 0.08 135;
+    --secondary-foreground: 0.96 0.012 85;
+
+    /* Cream background: #F3EBDD */
+    --background: 0.94 0.022 80;
+    --foreground: 0.21 0.025 60;
+
+    /* Warm beige card: #E7D6BF */
+    --card: 0.88 0.032 75;
+    --card-foreground: 0.21 0.025 60;
+
+    --popover: 0.94 0.022 80;
+    --popover-foreground: 0.21 0.025 60;
+
+    /* Muted beige */
+    --muted: 0.91 0.018 78;
+    --muted-foreground: 0.45 0.03 70;
+
+    /* Accent olive */
+    --accent: 0.43 0.08 135;
+    --accent-foreground: 0.96 0.012 85;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.82 0.03 78;
+    --input: 0.85 0.025 75;
+    --ring: 0.32 0.07 140;
+
+    --chart-1: 0.32 0.07 140;
+    --chart-2: 0.43 0.08 135;
+    --chart-3: 0.88 0.032 75;
+    --chart-4: 0.646 0.222 41.116;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.94 0.022 80;
+    --sidebar-foreground: 0.21 0.025 60;
+    --sidebar-primary: 0.32 0.07 140;
+    --sidebar-primary-foreground: 0.96 0.012 85;
+    --sidebar-accent: 0.88 0.032 75;
+    --sidebar-accent-foreground: 0.21 0.025 60;
+    --sidebar-border: 0.82 0.03 78;
+    --sidebar-ring: 0.32 0.07 140;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Playfair Display", serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .blob-shape {
+    border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;
+  }
+
+  .blob-shape-2 {
+    border-radius: 40% 60% 30% 70% / 60% 40% 70% 30%;
+  }
+
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s
+      ease;
+  }
+
+  .card-3d:hover {
+    transform: translateY(-8px) rotateX(4deg) rotateY(-3deg) scale(1.02);
+    box-shadow: 0 30px 60px -10px rgba(42, 34, 26, 0.25), 0 15px 30px -8px
+      rgba(47, 74, 46, 0.2);
+  }
+
+  .gallery-tilt {
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .gallery-tilt:hover {
+    transform: scale(1.04) rotate(-1deg);
+  }
+
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
